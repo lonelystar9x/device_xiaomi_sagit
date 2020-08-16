@@ -22,21 +22,18 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/xiaomi/sagit/device.mk)
 
 # Inherit some common AOSP stuff.
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+$(call inherit-product, vendor/xtended/config/common_full_phone.mk)
 
-# Firmware
-$(call inherit-product, vendor/apps/firmware-sagit/config.mk)
+# GoogleCamera
+$(call inherit-product-if-exists, vendor/apps/GoogleCamera/GoogleCamera.mk)
 
-# GooglePinYin
-$(call inherit-product-if-exists, vendor/apps/GooglePinYin/config.mk)
+# Lawnchair
+$(call inherit-product-if-exists, vendor/apps/Lawnchair/lawnchair.mk)
 
 # MiuiCamera
 $(call inherit-product-if-exists, vendor/apps/MiuiCamera/config.mk)
 
-# ScreenRecorder
-$(call inherit-product-if-exists, vendor/apps/OPScreenRecord/config.mk)
-
-PRODUCT_NAME := aosp_sagit
+PRODUCT_NAME := xtended_sagit
 PRODUCT_DEVICE := sagit
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := MI 6
@@ -45,6 +42,10 @@ TARGET_FACE_UNLOCK := true
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
+# Xtended Maintainer
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.xtended.maintainer=Lonelystar
+    
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="sagit-user 8.0.0 OPR1.170623.027 V9.2.3.0.OCAMIEK release-keys"
 
