@@ -14,7 +14,7 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/superior_sagit.mk
+    $(LOCAL_DIR)/superior_sagit.mk \
     $(LOCAL_DIR)/xtended_sagit.mk
 
 COMMON_LUNCH_CHOICES := \
