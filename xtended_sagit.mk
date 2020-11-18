@@ -25,10 +25,10 @@ $(call inherit-product, device/xiaomi/sagit/device.mk)
 $(call inherit-product, vendor/xtended/config/common_full_phone.mk)
 
 # GoogleCamera
-$(call inherit-product-if-exists, vendor/apps/GoogleCamera/GoogleCamera.mk)
+# $(call inherit-product-if-exists, vendor/apps/GoogleCamera/GoogleCamera.mk)
 
 # Lawnchair
-$(call inherit-product-if-exists, vendor/apps/Lawnchair/lawnchair.mk)
+# $(call inherit-product-if-exists, vendor/apps/Lawnchair/lawnchair.mk)
 
 # MiuiCamera
 $(call inherit-product-if-exists, vendor/apps/MiuiCamera/config.mk)
@@ -41,11 +41,8 @@ PRODUCT_MANUFACTURER := Xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
-# Xtended Maintainer
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.xtended.maintainer=Lonelystar
-    
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="sagit-user 8.0.0 OPR1.170623.027 V9.2.3.0.OCAMIEK release-keys"
+# Bootanimation
+TARGET_BOOT_ANIMATION_RES := 1080
 
-BUILD_FINGERPRINT := Xiaomi/sagit/sagit:8.0.0/OPR1.170623.027/V9.2.3.0.OCAMIEK:user/release-keys
+# Maintainer
+XTENDED_MAINTAINER := Lonelystar
